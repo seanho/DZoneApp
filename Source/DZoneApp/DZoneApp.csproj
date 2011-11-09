@@ -71,4 +71,8 @@
       <Name>DZone</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="IconRefresh.png" />
+    <Content Include="IconWeb.png" />
+  </ItemGroup>
 </Project>

@@ -22,6 +22,18 @@ namespace DZoneApp
 
 		[Outlet]
 		MonoMac.AppKit.NSProgressIndicator linkIndicator { get; set; }
+
+		[Outlet]
+		MonoMac.AppKit.NSToolbarItem refreshBarItem { get; set; }
+
+		[Outlet]
+		MonoMac.AppKit.NSToolbarItem openInBrowserBarItem { get; set; }
+
+		[Action ("onRefresh:")]
+		partial void onRefresh (MonoMac.Foundation.NSObject sender);
+
+		[Action ("onOpenInBrowser:")]
+		partial void onOpenInBrowser (MonoMac.Foundation.NSObject sender);
 	}
 
 	[Register ("MainWindow")]

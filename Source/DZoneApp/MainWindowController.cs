@@ -73,12 +73,33 @@ namespace DZoneApp
 			contentView.PostsBoundsChangedNotifications = true;
 			NSNotificationCenter.DefaultCenter.AddObserver(NSView.NSViewBoundsDidChangeNotification, ContentBoundsDidChange, contentView);
 			
+			refreshBarItem.Image = NSImage.ImageNamed("IconRefresh.png");
+			
 			LoadLinks();
 		}
 		
 		public new MainWindow Window
 		{
 			get { return (MainWindow)base.Window; }
+		}
+		
+		partial void onRefresh(NSObject sender)
+		{
+			if (!loadingLinks)
+			{
+				lastPage = 0;
+				models.Clear();
+				
+				LoadLinks();
+			}
+		}
+		
+		partial void onOpenInBrowser(NSObject sender)
+		{
+			if (!string.IsNullOrEmpty(webView.MainFrameUrl))
+			{
+				NSWorkspace.SharedWorkspace.OpenUrl(NSUrl.FromString(webView.MainFrameUrl));
+			}
 		}
 		
 		private void LoadUrl(NSUrl url)

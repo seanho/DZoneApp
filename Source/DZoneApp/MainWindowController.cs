@@ -73,7 +73,10 @@ namespace DZoneApp
 			contentView.PostsBoundsChangedNotifications = true;
 			NSNotificationCenter.DefaultCenter.AddObserver(NSView.NSViewBoundsDidChangeNotification, ContentBoundsDidChange, contentView);
 			
-			refreshBarItem.Image = NSImage.ImageNamed("IconRefresh.png");
+			// Path.Combine (NSBundle.MainBundle.ResourceUrl.Path, "Images", "back.png")
+			refreshBarItem.Image.Template = true;
+			openInBrowserBarItem.Image.Template = true;
+			copyUrlBarItem.Image.Template = true;
 			
 			LoadLinks();
 		}
@@ -99,6 +102,15 @@ namespace DZoneApp
 			if (!string.IsNullOrEmpty(webView.MainFrameUrl))
 			{
 				NSWorkspace.SharedWorkspace.OpenUrl(NSUrl.FromString(webView.MainFrameUrl));
+			}
+		}
+		
+		partial void onCopyUrl(NSObject sender)
+		{
+			if (!string.IsNullOrEmpty(webView.MainFrameUrl))
+			{
+				NSPasteboard.GeneralPasteboard.DeclareTypes(new string[] { NSPasteboard.NSStringType }, null);
+				NSPasteboard.GeneralPasteboard.SetStringForType(webView.MainFrameUrl, NSPasteboard.NSStringType);
 			}
 		}
 		

@@ -74,5 +74,6 @@
   <ItemGroup>
     <Content Include="IconRefresh.png" />
     <Content Include="IconWeb.png" />
+    <Content Include="IconCopy.png" />
   </ItemGroup>
 </Project>

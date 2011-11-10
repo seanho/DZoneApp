@@ -79,6 +79,8 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>AA5DC8CD-0D63-4F16-A37D-44532C5F07FB</string>
+							<string>AF8084CF-1469-4645-A5F2-82C161EB0561</string>
+							<string>E05C766F-E10D-4B34-B60E-F9770FFE0B0F</string>
 							<string>E7F7919A-A588-4375-961C-8050B7C2D264</string>
 							<string>FCDD1BE1-342D-4FE8-AE5A-232A2F512AA1</string>
 							<string>NSToolbarFlexibleSpaceItem</string>
@@ -98,6 +100,50 @@
 								<object class="NSCustomResource" key="NSToolbarItemImage">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">IconRefresh</string>
+								</object>
+								<nil key="NSToolbarItemTarget"/>
+								<nil key="NSToolbarItemAction"/>
+								<string key="NSToolbarItemMinSize">{0, 0}</string>
+								<string key="NSToolbarItemMaxSize">{0, 0}</string>
+								<bool key="NSToolbarItemEnabled">YES</bool>
+								<bool key="NSToolbarItemAutovalidates">YES</bool>
+								<int key="NSToolbarItemTag">-1</int>
+								<bool key="NSToolbarIsUserRemovable">YES</bool>
+								<int key="NSToolbarItemVisibilityPriority">0</int>
+							</object>
+							<object class="NSToolbarItem" id="500420693">
+								<object class="NSMutableString" key="NSToolbarItemIdentifier">
+									<characters key="NS.bytes">AF8084CF-1469-4645-A5F2-82C161EB0561</characters>
+								</object>
+								<string key="NSToolbarItemLabel">Back</string>
+								<string key="NSToolbarItemPaletteLabel">Back</string>
+								<string key="NSToolbarItemToolTip"/>
+								<nil key="NSToolbarItemView"/>
+								<object class="NSCustomResource" key="NSToolbarItemImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">IconBack</string>
+								</object>
+								<nil key="NSToolbarItemTarget"/>
+								<nil key="NSToolbarItemAction"/>
+								<string key="NSToolbarItemMinSize">{0, 0}</string>
+								<string key="NSToolbarItemMaxSize">{0, 0}</string>
+								<bool key="NSToolbarItemEnabled">YES</bool>
+								<bool key="NSToolbarItemAutovalidates">YES</bool>
+								<int key="NSToolbarItemTag">-1</int>
+								<bool key="NSToolbarIsUserRemovable">YES</bool>
+								<int key="NSToolbarItemVisibilityPriority">0</int>
+							</object>
+							<object class="NSToolbarItem" id="1037534279">
+								<object class="NSMutableString" key="NSToolbarItemIdentifier">
+									<characters key="NS.bytes">E05C766F-E10D-4B34-B60E-F9770FFE0B0F</characters>
+								</object>
+								<string key="NSToolbarItemLabel">Forward</string>
+								<string key="NSToolbarItemPaletteLabel">Forward</string>
+								<string key="NSToolbarItemToolTip"/>
+								<nil key="NSToolbarItemView"/>
+								<object class="NSCustomResource" key="NSToolbarItemImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">IconForward</string>
 								</object>
 								<nil key="NSToolbarItemTarget"/>
 								<nil key="NSToolbarItemAction"/>
@@ -242,7 +288,7 @@
 							</object>
 						</object>
 					</object>
-					<object class="NSArray" key="NSToolbarIBAllowedItems">
+					<object class="NSMutableArray" key="NSToolbarIBAllowedItems">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<reference ref="841414707"/>
 						<reference ref="184979178"/>
@@ -250,11 +296,23 @@
 						<reference ref="540648371"/>
 						<reference ref="109746078"/>
 						<reference ref="277669852"/>
+						<reference ref="500420693"/>
+						<reference ref="1037534279"/>
 					</object>
 					<object class="NSArray" key="NSToolbarIBDefaultItems">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<reference ref="841414707"/>
-						<reference ref="540648371"/>
+						<reference ref="184979178"/>
+						<reference ref="184979178"/>
+						<reference ref="184979178"/>
+						<reference ref="184979178"/>
+						<reference ref="184979178"/>
+						<reference ref="184979178"/>
+						<reference ref="184979178"/>
+						<reference ref="184979178"/>
+						<reference ref="184979178"/>
+						<reference ref="500420693"/>
+						<reference ref="1037534279"/>
 						<reference ref="503243409"/>
 						<reference ref="277669852"/>
 						<reference ref="109746078"/>
@@ -424,6 +482,7 @@
 							<string key="NSFrame">{{788, -4}, {129, 20}}</string>
 							<reference key="NSSuperview" ref="312036702"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:2352</string>
 							<int key="NSpiFlags">16394</int>
 							<double key="NSMaxValue">100</double>
@@ -547,6 +606,38 @@
 						<reference key="destination" ref="277669852"/>
 					</object>
 					<int key="connectionID">67</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">backBarItem</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="500420693"/>
+					</object>
+					<int key="connectionID">70</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">onBack:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="500420693"/>
+					</object>
+					<int key="connectionID">71</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">forwardBarItem</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="1037534279"/>
+					</object>
+					<int key="connectionID">72</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">onForward:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="1037534279"/>
+					</object>
+					<int key="connectionID">73</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -676,6 +767,8 @@
 							<reference ref="841414707"/>
 							<reference ref="109746078"/>
 							<reference ref="277669852"/>
+							<reference ref="500420693"/>
+							<reference ref="1037534279"/>
 						</object>
 						<reference key="parent" ref="748157544"/>
 					</object>
@@ -709,6 +802,16 @@
 						<reference key="object" ref="277669852"/>
 						<reference key="parent" ref="536786474"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">68</int>
+						<reference key="object" ref="500420693"/>
+						<reference key="parent" ref="536786474"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">69</int>
+						<reference key="object" ref="1037534279"/>
+						<reference key="parent" ref="536786474"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -740,6 +843,8 @@
 					<string>59.toolbarItem.selectable</string>
 					<string>62.IBPluginDependency</string>
 					<string>65.IBPluginDependency</string>
+					<string>68.IBPluginDependency</string>
+					<string>69.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
@@ -769,6 +874,8 @@
 					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.WebKitIBPlugin</string>
 				</object>
 			</object>
@@ -784,7 +891,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">67</int>
+			<int key="maxID">73</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -804,12 +911,16 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>onBack:</string>
 							<string>onCopyUrl:</string>
+							<string>onForward:</string>
 							<string>onOpenInBrowser:</string>
 							<string>onRefresh:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -819,14 +930,24 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>onBack:</string>
 							<string>onCopyUrl:</string>
+							<string>onForward:</string>
 							<string>onOpenInBrowser:</string>
 							<string>onRefresh:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBActionInfo">
+								<string key="name">onBack:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
 								<string key="name">onCopyUrl:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">onForward:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
@@ -843,8 +964,10 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>backBarItem</string>
 							<string>collectionView</string>
 							<string>copyUrlBarItem</string>
+							<string>forwardBarItem</string>
 							<string>linkIndicator</string>
 							<string>openInBrowserBarItem</string>
 							<string>pageIndicator</string>
@@ -853,7 +976,9 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSToolbarItem</string>
 							<string>NSCollectionView</string>
+							<string>NSToolbarItem</string>
 							<string>NSToolbarItem</string>
 							<string>NSProgressIndicator</string>
 							<string>NSToolbarItem</string>
@@ -866,8 +991,10 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>backBarItem</string>
 							<string>collectionView</string>
 							<string>copyUrlBarItem</string>
+							<string>forwardBarItem</string>
 							<string>linkIndicator</string>
 							<string>openInBrowserBarItem</string>
 							<string>pageIndicator</string>
@@ -877,11 +1004,19 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
+								<string key="name">backBarItem</string>
+								<string key="candidateClassName">NSToolbarItem</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">collectionView</string>
 								<string key="candidateClassName">NSCollectionView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">copyUrlBarItem</string>
+								<string key="candidateClassName">NSToolbarItem</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">forwardBarItem</string>
 								<string key="candidateClassName">NSToolbarItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
@@ -911,6 +1046,45 @@
 						<string key="minorKey">./Classes/MainWindowController.h</string>
 					</object>
 				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSCollectionViewItem</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>imageView</string>
+							<string>textField</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSImageView</string>
+							<string>NSTextField</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>imageView</string>
+							<string>textField</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">imageView</string>
+								<string key="candidateClassName">NSImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">textField</string>
+								<string key="candidateClassName">NSTextField</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/NSCollectionViewItem.h</string>
+					</object>
+				</object>
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
@@ -925,7 +1099,9 @@
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>IconBack</string>
 				<string>IconCopy</string>
+				<string>IconForward</string>
 				<string>IconRefresh</string>
 				<string>IconWeb</string>
 				<string>NSMenuCheckmark</string>
@@ -933,6 +1109,8 @@
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{256, 256}</string>
+				<string>{256, 256}</string>
 				<string>{256, 256}</string>
 				<string>{256, 256}</string>
 				<string>{256, 256}</string>

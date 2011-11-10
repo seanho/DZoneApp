@@ -77,6 +77,8 @@ namespace DZoneApp
 			refreshBarItem.Image.Template = true;
 			openInBrowserBarItem.Image.Template = true;
 			copyUrlBarItem.Image.Template = true;
+			backBarItem.Image.Template = true;
+			forwardBarItem.Image.Template = true;
 			
 			LoadLinks();
 		}
@@ -111,6 +113,22 @@ namespace DZoneApp
 			{
 				NSPasteboard.GeneralPasteboard.DeclareTypes(new string[] { NSPasteboard.NSStringType }, null);
 				NSPasteboard.GeneralPasteboard.SetStringForType(webView.MainFrameUrl, NSPasteboard.NSStringType);
+			}
+		}
+		
+		partial void onBack(NSObject sender)
+		{
+			if (webView.CanGoBack())
+			{
+				webView.GoBack();
+			}
+		}
+		
+		partial void onForward(NSObject sender)
+		{
+			if (webView.CanGoForward())
+			{
+				webView.GoForward();
 			}
 		}
 		

@@ -32,6 +32,12 @@ namespace DZoneApp
 		[Outlet]
 		MonoMac.AppKit.NSToolbarItem copyUrlBarItem { get; set; }
 
+		[Outlet]
+		MonoMac.AppKit.NSToolbarItem backBarItem { get; set; }
+
+		[Outlet]
+		MonoMac.AppKit.NSToolbarItem forwardBarItem { get; set; }
+
 		[Action ("onRefresh:")]
 		partial void onRefresh (MonoMac.Foundation.NSObject sender);
 
@@ -40,6 +46,12 @@ namespace DZoneApp
 
 		[Action ("onCopyUrl:")]
 		partial void onCopyUrl (MonoMac.Foundation.NSObject sender);
+
+		[Action ("onBack:")]
+		partial void onBack (MonoMac.Foundation.NSObject sender);
+
+		[Action ("onForward:")]
+		partial void onForward (MonoMac.Foundation.NSObject sender);
 	}
 
 	[Register ("MainWindow")]

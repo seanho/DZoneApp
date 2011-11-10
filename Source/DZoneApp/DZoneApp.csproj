@@ -75,5 +75,7 @@
     <Content Include="IconRefresh.png" />
     <Content Include="IconWeb.png" />
     <Content Include="IconCopy.png" />
+    <Content Include="IconBack.png" />
+    <Content Include="IconForward.png" />
   </ItemGroup>
 </Project>
